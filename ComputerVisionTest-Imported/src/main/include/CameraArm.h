@@ -1,7 +1,7 @@
 #pragma once
 #include "Limelight.h"
 #include <frc/Servo.h>
-#include <frc/motorcontrol/PWMVictorSPX.h>
+#include <frc/PWMVictorSPX.h>
 class CameraMountAimer{
     public:
     LimeLight limelight;
