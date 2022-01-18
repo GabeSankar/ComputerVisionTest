@@ -12,7 +12,6 @@ class LimeLight{
 public:
     LimeLight();
     void Update();
-
     double targetIsFound(); //tv value is double not bool
 
     double GetArea();
@@ -23,10 +22,10 @@ public:
     double GetWidth();
     double GetHeight();
     void SetVisionMode(bool visionMode);
+    double tv;
 
 private:
     std::shared_ptr<NetworkTable> Table;
-    double tv;
     double X;
     double Y;
     double Width;

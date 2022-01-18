@@ -33,5 +33,6 @@ double LimeLight::GetWidth(){
     return Width;
 }
 void LimeLight::SetVisionMode(bool visionMode){
-    //do this at some point
+    Table->PutNumber("ledMode", visionMode ? 0.0 : 1.0);
+	Table->PutNumber("camMode", visionMode ? 0.0 : 1.0);
 }
