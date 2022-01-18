@@ -19,3 +19,8 @@ void CameraMountAimer::rotateCamY(){
     }
     
 }
+void CameraMountAimer::initialCalibration(){
+    while(limelight.tv = 0){
+        //manual calibration or search code
+    }
+}

@@ -7,6 +7,7 @@ class CameraMountAimer{
     LimeLight limelight;
     void autoAimInstructions();
     void rotateCamY();
+    void initialCalibration();
     void turnHeadX();
     void OutOfTargetAction();
     frc::Servo cameraServo{1}; //Get the servo port
