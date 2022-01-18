@@ -15,7 +15,7 @@ void CameraMountAimer::rotateCamY(){
     if(limelight.GetYOffset()>0){
         cameraServo.SetAngle(servoAngle + servodegstep);
     }else if(limelight.GetYOffset()<0){
-        cameraServo.SetAngle(servoAngle + servodegstep);
+        cameraServo.SetAngle(servoAngle - servodegstep);
     }
     
 }
