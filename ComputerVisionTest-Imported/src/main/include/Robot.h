@@ -6,9 +6,14 @@
 #include "Limelight.h"
 #include "CameraArm.h"
 #include "LidarLite.h"
+#include "Constants.h"
+#include <frc/Joystick.h>
+
 
 class Robot : public frc::TimedRobot {
  public:
+  CameraMountAimer cam;
+  LidarLite lidar;
   void RobotInit() override;
   void RobotPeriodic() override;
   void AutonomousInit() override;
@@ -19,6 +24,7 @@ class Robot : public frc::TimedRobot {
   void DisabledPeriodic() override;
   void TestInit() override;
   void TestPeriodic() override;
+  frc::Joystick stick{JoystickPort};
 
  private:
   frc::SendableChooser<std::string> m_chooser;

@@ -7,7 +7,6 @@
 
 
 #include <frc/smartdashboard/SmartDashboard.h>
-
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
@@ -36,6 +35,7 @@ void Robot::RobotPeriodic() {}
  * make sure to add them to the chooser code above as well.
  */
 void Robot::AutonomousInit() {
+ 
   m_autoSelected = m_chooser.GetSelected();
   // m_autoSelected = SmartDashboard::GetString("Auto Selector",
   //     kAutoNameDefault);
@@ -57,14 +57,31 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
+LidarLite(LidarPort);
 
-
-  
 }
 
 void Robot::TeleopPeriodic() {
+int targetfound;
+ while(stick.GetZ() > 0){
 
+   cam.limelight.Update();
+   targetfound = int(cam.limelight.targetIsFound());
 
+   switch(targetfound){
+
+     case 1:
+      cam.turnHeadX();
+      cam.rotateCamY();
+     break;
+     
+     case 0:
+      cam.Calibration();
+     break;
+   }
+   wpi::outs() << "horizontal distance: " << lidar.GetDistanceFloorwise();
+   wpi::outs() << "distance from tape: " << lidar.GetDistanceFloorwise();
+  }
 
 }
 

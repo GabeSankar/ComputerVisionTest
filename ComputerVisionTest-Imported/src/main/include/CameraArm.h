@@ -2,6 +2,8 @@
 #include "Limelight.h"
 #include <frc/Servo.h>
 #include <frc/PWMVictorSPX.h>
+#include "Constants.h"
+
 class CameraMountAimer{
     public:
     LimeLight limelight;
@@ -10,8 +12,9 @@ class CameraMountAimer{
     void initialCalibration();
     void turnHeadX();
     void OutOfTargetAction();
-    frc::Servo cameraServo{1}; //Get the servo port
-    frc::PWMVictorSPX headTurnMotor{2};//get the motor port
+    void Calibration();
+    frc::Servo cameraServo{CameraServoPort}; //Get the servo port
+    frc::PWMVictorSPX headTurnMotor{TurretCameraMotor};//get the motor port
 
     private:
     double servoAngle;
