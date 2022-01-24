@@ -25,7 +25,7 @@ public:
     double tv;
 
 private:
-    std::shared_ptr<NetworkTable> Table;
+    std::shared_ptr<nt::NetworkTable> Table;
     double X;
     double Y;
     double Width;
