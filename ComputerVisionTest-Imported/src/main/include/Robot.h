@@ -13,7 +13,7 @@
 class Robot : public frc::TimedRobot {
  public:
   CameraMountAimer cam;
-  LidarLite lidar;
+  //LidarLite lidar;
   void RobotInit() override;
   void RobotPeriodic() override;
   void AutonomousInit() override;
