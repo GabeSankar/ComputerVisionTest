@@ -1,3 +1,4 @@
+/*
 #include "LidarLite.h"
 #include <math.h>
 #include "CameraArm.h"
@@ -7,7 +8,7 @@ LidarLite::LidarLite(int dioPort):
     lidarCounter(dioPort)
 {
     distance = 0.0;
-    lidarCounter.SetMaxPeriod(1.0);
+    lidarCounter.SetMaxPeriod(1);
     lidarCounter.SetSemiPeriodMode(true);
     lidarCounter.Reset();
 }
@@ -24,4 +25,4 @@ double LidarLite::GetDistanceRaw() {
 double LidarLite::GetDistanceFloorwise(){
     double angle = camarm.cameraServo.GetAngle();
     return (cos ( angle*(PI/180)))*GetDistanceRaw();
-}
+}*/
