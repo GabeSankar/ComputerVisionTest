@@ -57,7 +57,7 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-LidarLite(LidarPort);
+//LidarLite(LidarPort);
 
 }
 
@@ -79,8 +79,6 @@ int targetfound;
       cam.Calibration();
      break;
    }
-   wpi::outs() << "horizontal distance: " << lidar.GetDistanceFloorwise();
-   wpi::outs() << "distance from tape: " << lidar.GetDistanceFloorwise();
   }
 
 }
