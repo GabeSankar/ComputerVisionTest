@@ -23,6 +23,8 @@ public:
     double GetHeight();
     void SetVisionMode(bool visionMode);
     double tv;
+    void LEDon();
+    void LEDoff();
 
 private:
     std::shared_ptr<nt::NetworkTable> Table;

@@ -20,7 +20,7 @@ class CameraMountAimer{
 
     private:
     double servoAngle;
-    double rotatexspeed = 1;
+
     bool TargetOutOfRange;
 
 };

@@ -68,7 +68,8 @@ int targetfound;
  while(1){
 
    cam.limelight.Update();
-   
+  
+
    targetfound = int(cam.limelight.targetIsFound());
    frc::SmartDashboard::PutNumber("Target found", cam.limelight.targetIsFound());
    frc::SmartDashboard::PutNumber("X offset", cam.limelight.GetXOffset());
@@ -76,7 +77,11 @@ int targetfound;
    frc::SmartDashboard::PutNumber("JoystickX", stick.GetX());
    frc::SmartDashboard::PutNumber("JoystickY", stick.GetY());
   
-  
+  if(stick.GetTrigger()){
+    cam.limelight.LEDon();
+  }else{
+    cam.limelight.LEDoff();
+  }
   
       cam.turnHeadX();
       cam.rotateCamY();
