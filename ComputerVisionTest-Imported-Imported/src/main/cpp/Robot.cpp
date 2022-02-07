@@ -7,6 +7,17 @@
 
 
 #include <frc/smartdashboard/SmartDashboard.h>
+
+Robot::Robot():
+
+lidar(){
+  dash -> init();
+} 
+
+
+
+
+
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
@@ -57,10 +68,7 @@ void Robot::AutonomousPeriodic() {
   }
 }
 
-void Robot::TeleopInit() {
-//LidarLite(LidarPort);98
-
-}
+void Robot::TeleopInit() {}
 
 void Robot::TeleopPeriodic() {
 int targetfound;
@@ -68,7 +76,6 @@ int targetfound;
  while(1){
 
    cam.limelight.Update();
-  
 
    targetfound = int(cam.limelight.targetIsFound());
    frc::SmartDashboard::PutNumber("Target found", cam.limelight.targetIsFound());
@@ -76,15 +83,17 @@ int targetfound;
    frc::SmartDashboard::PutNumber("Y offset", cam.limelight.GetYOffset());
    frc::SmartDashboard::PutNumber("JoystickX", stick.GetX());
    frc::SmartDashboard::PutNumber("JoystickY", stick.GetY());
-  
+   frc::SmartDashboard::PutNumber("Distance", lidar.GetDistance());
   if(stick.GetTrigger()){
     cam.limelight.LEDon();
+    cam.turnHeadX();
+      cam.rotateCamY();
+    frc::SmartDashboard::PutNumber("X turn", cam.limelight.GetXOffset());
   }else{
     cam.limelight.LEDoff();
-  }
+  } 
   
-      cam.turnHeadX();
-      cam.rotateCamY();
+      
  
      
     

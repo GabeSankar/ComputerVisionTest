@@ -1,8 +1,10 @@
 #pragma once
 //Ports
-#define LidarPort 1
+#define LidarPort 6
 #define CameraServoPort 2
-#define TurretCameraMotor 1
-#define JoystickPort 0
+#define TurretCameraMotor 3
+#define JoystickPort 2
 #define ServoDegStep 1
-#define rotatexspeed 0.4
+#define rotatexspeed 0.1
+#define paddingbox 10
+#define LIDAR_OFFSET -10

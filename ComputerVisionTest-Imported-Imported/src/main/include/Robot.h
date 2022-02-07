@@ -13,10 +13,10 @@
 #include <frc/Joystick.h>
 
 
+
 class Robot : public frc::TimedRobot {
  public:
-  CameraMountAimer cam;
-  //LidarLite lidar;
+  Robot();
   void RobotInit() override;
   void RobotPeriodic() override;
   void AutonomousInit() override;
@@ -27,6 +27,8 @@ class Robot : public frc::TimedRobot {
   void DisabledPeriodic() override;
   void TestInit() override;
   void TestPeriodic() override;
+  LidarLite lidar;
+  CameraMountAimer cam;
   frc::Joystick stick{JoystickPort};
   units::second_t delay{0.000000002};
 
@@ -35,4 +37,6 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
+  //LidarLite lidar;
+  frc::SmartDashboard * dash;
 };
